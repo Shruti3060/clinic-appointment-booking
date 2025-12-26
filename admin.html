@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+
+<h2>Booked Appointments</h2>
+<ul id="list"></ul>
+
+<script>
+    let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+    let list = document.getElementById("list");
+
+    appointments.forEach(a => {
+        let li = document.createElement("li");
+        li.innerText = `${a.name} | Age: ${a.age} | Doctor: ${a.doctor} | Date: ${a.date}`;
+        list.appendChild(li);
+    });
+</script>
+
+</body>
+</html>
